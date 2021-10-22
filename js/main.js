@@ -17,6 +17,17 @@ let page = 1
 let pageCount = 1
 
 $('#btn_add').on('click', function () {
+  if (
+    userName.val().trim() === '' ||
+    lastName.val().trim() === '' ||
+    number.val().trim() === '' ||
+    wKPI.val().trim() === '' ||
+    mKPI.val().trim() === ''
+  ) {
+    alert('Заполните форму')
+    return
+  }
+
   let obj = {
     name: userName.val(),
     lastName: lastName.val(),
@@ -71,6 +82,16 @@ $('body').on('click', '.btn-edit', (e) => {
 })
 
 $('#btn-save').on('click', (e) => {
+  if (
+    editName.val().trim() === '' ||
+    editLastName.val().trim() === '' ||
+    editPhone.val().trim() === '' ||
+    editWeekly.val().trim() === '' ||
+    editMonthly.val().trim() === ''
+  ) {
+    alert('Заполните форму')
+    return
+  }
   let id = e.target.parentNode.id
   editStudent(id)
   editModal.toggleClass('active')
