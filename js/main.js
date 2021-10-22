@@ -25,7 +25,7 @@ $('#btn_add').on('click', function () {
     monthlyKpi: mKPI.val(),
   }
   addInfo(obj)
-  modal.toggleClass('active')
+  // modal.toggleClass('active')
 })
 
 function addInfo(obj) {
@@ -36,6 +36,7 @@ function addInfo(obj) {
       'Content-Type': 'application/json;charset=utf-8',
     },
   }).then(() => render())
+  getPagination()
 }
 
 $('body').on('click', '.btn-delete', (e) => {
@@ -117,7 +118,8 @@ async function render() {
 }
 
 search.on('input', async function () {
-  let res = await fetch(`${API}?_limit=5&_page=${page}&_q=${search.val()}`)
+  let res = await fetch(`${API}?q=${search.val()}`)
+  console.log(search.val())
   let data = await res.json()
   contacts.html('')
   data.forEach((item) => {
