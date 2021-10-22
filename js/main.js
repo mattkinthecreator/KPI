@@ -5,6 +5,7 @@ let number = $('#phoneNumber')
 let wKPI = $('#weeklyKPI')
 let mKPI = $('#monthlyKPI')
 let contacts = $('.contacts')
+let search = $('#search-bar')
 
 $('#btn_add').on('click', function () {
   let obj = {
@@ -72,5 +73,20 @@ async function render() {
   })
   console.log(data)
 }
-
-render()
+search.on('input' , async function(){
+    let res = await fetch(`${API}?q=${search.val()}`)
+    let data = await res.json()
+    contacts.html('')
+    data.forEach(item => {
+        contacts.append(
+        `<div id="${item.id}">
+            <img class="btn-edit" src="./img/pen.png">
+            <p>${item.name}</p>
+            <p>${item.lastName}</p>
+            <p>${item.phone}</p>
+            <p>${item.weeklyKpi}</p>
+            <p>${item.monthlyKpi}</p>
+            <img class="btn-delete" src="./img/delete.png">
+        </div>`)
+    });
+})
