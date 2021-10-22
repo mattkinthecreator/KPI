@@ -75,8 +75,8 @@ async function render() {
   contacts.html('')
   data.forEach((item) => {
     contacts.append(
-      `<div id="${item.id}">
-        <div class="edit-wrapper">
+      `<div class="student">
+        <div class="edit-wrapper" id="${item.id}">
           <img class="btn-edit" src="./img/pen.png">
         </div>
         <div className="student-info">
@@ -86,7 +86,7 @@ async function render() {
           <p>${item.weeklyKpi}</p>
           <p>${item.monthlyKpi}</p>
         </div>
-        <div className="delete-wrapper">
+        <div className="delete-wrapper" id="${item.id}">
           <img class="btn-delete" src="./img/delete.png">
         </div>
       </div>`
