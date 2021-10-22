@@ -100,14 +100,14 @@ async function render() {
         <div class="edit-wrapper" id="${item.id}">
           <img class="btn-edit" src="./img/pen.png">
         </div>
-        <div className="student-info">
+        <div class="student-info">
           <p>${item.name}</p>
           <p>${item.lastName}</p>
           <p>${item.phone}</p>
           <p>${item.weeklyKpi}</p>
           <p>${item.monthlyKpi}</p>
         </div>
-        <div className="delete-wrapper" id="${item.id}">
+        <div class="delete-wrapper" id="${item.id}">
           <img class="btn-delete" src="./img/delete.png">
         </div>
       </div>`
@@ -126,14 +126,14 @@ search.on('input', async function () {
         <div class="edit-wrapper">
           <img class="btn-edit" src="./img/pen.png">
         </div>
-        <div className="student-info">
+        <div class="student-info">
           <p>${item.name}</p>
           <p>${item.lastName}</p>
           <p>${item.phone}</p>
           <p>${item.weeklyKpi}</p>
           <p>${item.monthlyKpi}</p>
         </div>
-        <div className="delete-wrapper">
+        <div class="delete-wrapper">
           <img class="btn-delete" src="./img/delete.png">
         </div>
       </div>`
