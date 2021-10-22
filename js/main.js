@@ -13,6 +13,8 @@ let editWeekly = $('#weeklyKPI_edit')
 let editMonthly = $('#monthlyKPI_edit')
 let editModal = $('.modal-edit')
 let modal = $('.modal-add')
+let page = 1
+let pageCount = 1
 
 $('#btn_add').on('click', function () {
   let obj = {
@@ -86,7 +88,7 @@ function editStudent(id) {
 }
 
 async function render() {
-  let res = await fetch(API)
+  let res = await fetch(`${API}?_limit=5&_page=${page}`)
   let data = await res.json()
   contacts.html('')
   data.forEach((item) => {
@@ -108,7 +110,6 @@ async function render() {
       </div>`
     )
   })
-  console.log(data)
 }
 
 search.on('input', async function () {
@@ -145,4 +146,35 @@ $('#open-modal-add').on('click', () => {
   mKPI.val('')
 })
 
+function getPagination() {
+  fetch(API)
+    .then((res) => res.json())
+    .then((data) => {
+      pageCount = Math.ceil(data.length / 3)
+      $('.pagination-page').remove()
+      for (let i = pageCount; i >= 1; i--) {
+        $('#previous').after(`
+          <button class="pagination-page">${i}</button>
+        `)
+      }
+    })
+}
+
+$('#next').on('click', () => {
+  page++
+  console.log(page)
+  render()
+})
+$('#previous').on('click', () => {
+  console.log(page)
+  if (page <= 1) return
+  page--
+  render()
+})
+$('body').on('click', '.pagination-page', (e) => {
+  page = e.target.innerText
+  render()
+})
+
 render()
+getPagination()
