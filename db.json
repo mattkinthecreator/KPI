@@ -1,12 +1,20 @@
 {
   "students": [
     {
-      "name": "Ilim",
-      "lastName": "Bekiev",
-      "phone": "123123",
-      "weeklyKpi": "123123",
-      "monthlyKpi": "123123",
+      "name": "asdasdas",
+      "lastName": "asdas",
+      "phone": "dashdjaskh",
+      "weeklyKpi": "jhkadhsdjkhasjk",
+      "monthlyKpi": "dasjdhaskdaj",
       "id": 1
+    },
+    {
+      "name": "dasdasdjkl",
+      "lastName": "dakldjalk",
+      "phone": "dasdas",
+      "weeklyKpi": "111",
+      "monthlyKpi": "1",
+      "id": 2
     }
   ]
 }
