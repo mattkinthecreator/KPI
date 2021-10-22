@@ -1,4 +1,3 @@
-
 const API = 'http://localhost:8000/students'
 let userName = $('#name')
 let lastName = $('#lastName')
