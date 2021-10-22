@@ -75,17 +75,6 @@ async function render() {
   contacts.html('')
   data.forEach((item) => {
     contacts.append(
-<<<<<<< HEAD
-      `<div id="${item.id}" class="student">
-            <img class="btn-edit" src="./img/pen.png">
-            <p>${item.name}</p>
-            <p>${item.lastName}</p>
-            <p>${item.phone}</p>
-            <p>${item.weeklyKpi}</p>
-            <p>${item.monthlyKpi}</p>
-            <img class="btn-delete" src="./img/delete.png">
-        </div>`
-=======
       `<div id="${item.id}">
         <div class="edit-wrapper">
           <img class="btn-edit" src="./img/pen.png">
@@ -101,32 +90,11 @@ async function render() {
           <img class="btn-delete" src="./img/delete.png">
         </div>
       </div>`
->>>>>>> 135462c271a40ca42e28632e54f47f167cdba1fd
     )
   })
   console.log(data)
 }
-<<<<<<< HEAD
-search.on('input' , async function(){
-    let res = await fetch(`${API}?q=${search.val()}`)
-    let data = await res.json()
-    contacts.html('')
-    data.forEach(item => {
-        contacts.append(
-        `<div id="${item.id}">
-            <img class="btn-edit" src="./img/pen.png">
-            <p>${item.name}</p>
-            <p>${item.lastName}</p>
-            <p>${item.phone}</p>
-            <p>${item.weeklyKpi}</p>
-            <p>${item.monthlyKpi}</p>
-            <img class="btn-delete" src="./img/delete.png">
-        </div>`)
-    });
-})
 
-render()
-=======
 search.on('input', async function () {
   let res = await fetch(`${API}?q=${search.val()}`)
   let data = await res.json()
@@ -152,4 +120,3 @@ search.on('input', async function () {
   })
 })
 render()
->>>>>>> 135462c271a40ca42e28632e54f47f167cdba1fd

@@ -37,11 +37,6 @@
   height: 20px;
 }
 
-.contacts {
-  /* display: flex; */
-  /* justify-content: space-evenly; */
-}
-
 .btn-edit{
   width: 20px;
   height: 20px;
@@ -57,4 +52,3 @@
   justify-content: space-evenly;
   width: 100%;
 }
-
