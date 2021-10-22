@@ -1,36 +1,13 @@
 {
   "students": [
     {
-      "name": "Adilet",
-      "lastName": "asdasd",
-      "phone": "231",
-      "weeklyKpi": "132",
-      "monthlyKpi": "321",
+
+      "name": "Ilim",
+      "lastName": "Bekiev",
+      "phone": "asdas",
+      "weeklyKpi": "dasdasjl",
+      "monthlyKpi": "adasdasd",
       "id": 1
-    },
-    {
-      "name": "Adilet",
-      "lastName": "asdasd",
-      "phone": "231",
-      "weeklyKpi": "132",
-      "monthlyKpi": "321",
-      "id": 2
-    },
-    {
-      "name": "asd",
-      "lastName": "sda",
-      "phone": "213",
-      "weeklyKpi": "312",
-      "monthlyKpi": "312",
-      "id": 3
-    },
-    {
-      "name": "Adilet",
-      "lastName": "Maadanov",
-      "phone": "123",
-      "weeklyKpi": "312",
-      "monthlyKpi": "312",
-      "id": 4
     }
   ]
 }
