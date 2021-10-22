@@ -89,6 +89,9 @@
   font-size: 16px;
   border-radius: 5px;
 }
+img {
+  cursor: pointer;
+}
 #next,
 #previous {
   width: 30px;

@@ -178,6 +178,5 @@ $('body').on('click', '.pagination-page', (e) => {
   page = e.target.innerText
   render()
 })
-
 render()
 getPagination()
