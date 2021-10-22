@@ -1,19 +1,19 @@
 {
   "students": [
     {
-      "name": "asdasdas",
-      "lastName": "asdas",
-      "phone": "dashdjaskh",
-      "weeklyKpi": "jhkadhsdjkhasjk",
-      "monthlyKpi": "dasjdhaskdaj",
+      "name": "Ilim",
+      "lastName": "Bekiev",
+      "phone": "0777567344",
+      "weeklyKpi": "100",
+      "monthlyKpi": "100",
       "id": 1
     },
     {
-      "name": "dasdasdjkl",
-      "lastName": "dakldjalk",
-      "phone": "dasdas",
-      "weeklyKpi": "111",
-      "monthlyKpi": "1",
+      "name": "Adilet",
+      "lastName": "Maadanov",
+      "phone": "0709048182",
+      "weeklyKpi": "100",
+      "monthlyKpi": "100",
       "id": 2
     }
   ]
