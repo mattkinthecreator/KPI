@@ -4,6 +4,7 @@ let lastName = $('#lastName')
 let number = $('#phoneNumber')
 let wKPI = $('#weeklyKPI')
 let mKPI = $('#monthlyKPI')
+let contacts = $('.contacts')
 
 $('#btn_add').on('click', function(){
     let obj = {
@@ -46,3 +47,24 @@ function editStudent(id) {
     monthlyKpi: '',
   }
 }
+
+async function render() {
+   let res = await fetch(API)
+   let data = await res.json();
+
+    data.forEach(item => {
+        contacts.append(
+        `<div id="${item.id}">
+            <img class="btn-edit" src="./img/pen.png">
+            <p>${item.name}</p>
+            <p>${item.lastName}</p>
+            <p>${item.phone}</p>
+            <p>${item.weeklyKpi}</p>
+            <p>${item.monthlyKpi}</p>
+            <img class="btn-delete" src="./img/delete.png">
+        </div>`)
+    });
+   console.log(data)
+}
+
+render()
