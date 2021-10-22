@@ -46,7 +46,10 @@ $('body').on('click', '.btn-delete', (e) => {
 function deleteStudent(id) {
   fetch(`${API}/${id}`, {
     method: 'DELETE',
-  }).then(() => render())
+  }).then(() => {
+    render()
+    getPagination()
+  })
 }
 
 $('body').on('click', '.btn-edit', (e) => {
@@ -110,10 +113,11 @@ async function render() {
       </div>`
     )
   })
+  // getPagination()
 }
 
 search.on('input', async function () {
-  let res = await fetch(`${API}?q=${search.val()}`)
+  let res = await fetch(`${API}?_limit=5&_page=${page}&_q=${search.val()}`)
   let data = await res.json()
   contacts.html('')
   data.forEach((item) => {
@@ -150,7 +154,7 @@ function getPagination() {
   fetch(API)
     .then((res) => res.json())
     .then((data) => {
-      pageCount = Math.ceil(data.length / 3)
+      pageCount = Math.ceil(data.length / 5)
       $('.pagination-page').remove()
       for (let i = pageCount; i >= 1; i--) {
         $('#previous').after(`
@@ -161,12 +165,11 @@ function getPagination() {
 }
 
 $('#next').on('click', () => {
+  if (page >= pageCount) return
   page++
-  console.log(page)
   render()
 })
 $('#previous').on('click', () => {
-  console.log(page)
   if (page <= 1) return
   page--
   render()
