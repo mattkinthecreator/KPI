@@ -22,7 +22,6 @@
   font-size: 20px;
 }
 
-
 .header {
   height: 50px;
   background-color: rgb(150, 57, 57);
@@ -68,9 +67,10 @@
   transform: translate(-50%, -50%);
   width: 500px;
   height: 500px;
-  background-color: rgb(150, 57, 57)
+  background-color: rgb(150, 57, 57);
 }
-.modal-edit input, .modal-add input {
+.modal-edit input,
+.modal-add input {
   width: 60%;
   height: 40px;
   border-radius: 5px;
@@ -78,8 +78,9 @@
   border: none;
   font-size: 20px;
 }
-.modal-edit button, .modal-add button {
-  background-color: #4CAF50; 
+.modal-edit button,
+.modal-add button {
+  background-color: #4caf50;
   border: none;
   color: white;
   padding: 15px 32px;
