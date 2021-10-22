@@ -1,12 +1,3 @@
 {
-  "students": [
-    {
-      "name": "Ilim",
-      "lastName": "Bekiev",
-      "phone": "0777567344",
-      "weeklyKpi": "100",
-      "monthlyKpi": "100",
-      "id": 1
-    }
-  ]
+  "students": []
 }
