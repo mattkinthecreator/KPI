@@ -29,16 +29,26 @@
       <div class="contacts"></div>
     </div>
 
-    <div>
-      <button id="btn_add"></button>
-      <div class="modal-add">
-        <input type="text" id="name" />
-        <input type="text" id="lastName" />
-        <input type="text" id="phoneNumber" />
-        <input type="text" id="weeklyKPI" />
-        <input type="text" id="monthlyKPI" />
-      </div>
+    <div class="bnt_add-wrapper">
+      <img id="open-modal-add" src="./img/plus.png" />
     </div>
+    <div class="modal-add">
+      <input type="text" id="name" />
+      <input type="text" id="lastName" />
+      <input type="text" id="phoneNumber" />
+      <input type="text" id="weeklyKPI" />
+      <input type="text" id="monthlyKPI" />
+      <button id="btn_add">Создать студента</button>
+    </div>
+    <div class="modal-edit">
+      <input type="text" id="name_edit" />
+      <input type="text" id="lastName" />
+      <input type="text" id="phoneNumber" />
+      <input type="text" id="weeklyKPI" />
+      <input type="text" id="monthlyKPI" />
+      <button id="btn-save">Сохранить</button>
+    </div>
+    <div id="background"></div>
     <script src="./js/main.js"></script>
   </body>
 </html>
