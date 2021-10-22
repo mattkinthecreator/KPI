@@ -7,6 +7,14 @@
       "weeklyKpi": "123",
       "monthlyKpi": "123",
       "id": 1
+    },
+    {
+      "name": "Adilet",
+      "lastName": "Maadanov",
+      "phone": "09909000",
+      "weeklyKpi": "1231",
+      "monthlyKpi": "1232",
+      "id": 2
     }
   ]
 }
