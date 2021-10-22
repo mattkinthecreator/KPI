@@ -45,9 +45,12 @@ function deleteStudent(id) {
   }).then(() => render())
 }
 
-$('body').on('click', '.btn-edit', (e) => {})
+$('body').on('click', '.btn-edit', (e) => {
+  let id = e.target.parentNode.id
+  editModal.attr('id', id)
+})
 
-$('#btn-save').on('click', () => {
+$('#btn-save').on('click', (e) => {
   let id = e.target.parentNode.id
   editStudent(id)
 })
