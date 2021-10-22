@@ -12,6 +12,7 @@ let editPhone = $('#phoneNumber_edit')
 let editWeekly = $('#weeklyKPI_edit')
 let editMonthly = $('#monthlyKPI_edit')
 let editModal = $('.modal-edit')
+let modal = $('.modal-add')
 
 $('#btn_add').on('click', function () {
   let obj = {
@@ -22,6 +23,7 @@ $('#btn_add').on('click', function () {
     monthlyKpi: mKPI.val(),
   }
   addInfo(obj)
+  modal.toggleClass('active')
 })
 
 function addInfo(obj) {
@@ -31,7 +33,7 @@ function addInfo(obj) {
     headers: {
       'Content-Type': 'application/json;charset=utf-8',
     },
-  })
+  }).then(() => render())
 }
 
 $('body').on('click', '.btn-delete', (e) => {
@@ -48,11 +50,22 @@ function deleteStudent(id) {
 $('body').on('click', '.btn-edit', (e) => {
   let id = e.target.parentNode.id
   editModal.attr('id', id)
+  editModal.toggleClass('active')
+  fetch(`${API}/${id}`)
+    .then((res) => res.json())
+    .then((data) => {
+      editName.val(data.name)
+      editLastName.val(data.lastName)
+      editPhone.val(data.phone)
+      editWeekly.val(data.weeklyKpi)
+      editMonthly.val(data.monthlyKpi)
+    })
 })
 
 $('#btn-save').on('click', (e) => {
   let id = e.target.parentNode.id
   editStudent(id)
+  editModal.toggleClass('active')
 })
 
 function editStudent(id) {
@@ -121,6 +134,15 @@ search.on('input', async function () {
       </div>`
     )
   })
+})
+
+$('#open-modal-add').on('click', () => {
+  modal.toggleClass('active')
+  userName.val('')
+  lastName.val('')
+  number.val('')
+  wKPI.val('')
+  mKPI.val('')
 })
 
 render()
