@@ -75,3 +75,7 @@
   justify-content: center;
   gap: 30px;
 }
+
+img {
+  cursor: pointer;
+}

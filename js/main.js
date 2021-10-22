@@ -122,4 +122,5 @@ search.on('input', async function () {
     )
   })
 })
+
 render()
