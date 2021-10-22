@@ -38,12 +38,12 @@
   color: #fff;
 }
 
-#open-modal-add{
+#open-modal-add {
   width: 20px;
   height: 20px;
 }
 
-.btn-edit{
+.btn-edit {
   width: 20px;
   height: 20px;
 }
@@ -54,12 +54,13 @@
 }
 
 .student {
-    display: flex; 
+  display: flex;
   justify-content: space-evenly;
   width: 100%;
 }
 
-.modal-edit, .modal-add {
+.modal-edit,
+.modal-add {
   display: none;
   position: fixed;
   top: 50%;
@@ -88,15 +89,7 @@
   font-size: 16px;
   border-radius: 5px;
 }
-
-.modal-edit.active, .modal-add.active {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 30px;
-}
-
-img {
-  cursor: pointer;
+#next,
+#previous {
+  width: 30px;
 }

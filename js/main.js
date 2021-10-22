@@ -13,6 +13,8 @@ let editWeekly = $('#weeklyKPI_edit')
 let editMonthly = $('#monthlyKPI_edit')
 let editModal = $('.modal-edit')
 let modal = $('.modal-add')
+let page = 1
+let pageCount = 1
 
 $('#btn_add').on('click', function () {
   let obj = {
@@ -44,7 +46,10 @@ $('body').on('click', '.btn-delete', (e) => {
 function deleteStudent(id) {
   fetch(`${API}/${id}`, {
     method: 'DELETE',
-  }).then(() => render())
+  }).then(() => {
+    render()
+    getPagination()
+  })
 }
 
 $('body').on('click', '.btn-edit', (e) => {
@@ -86,7 +91,7 @@ function editStudent(id) {
 }
 
 async function render() {
-  let res = await fetch(API)
+  let res = await fetch(`${API}?_limit=5&_page=${page}`)
   let data = await res.json()
   contacts.html('')
   data.forEach((item) => {
@@ -108,11 +113,11 @@ async function render() {
       </div>`
     )
   })
-  console.log(data)
+  // getPagination()
 }
 
 search.on('input', async function () {
-  let res = await fetch(`${API}?q=${search.val()}`)
+  let res = await fetch(`${API}?_limit=5&_page=${page}&_q=${search.val()}`)
   let data = await res.json()
   contacts.html('')
   data.forEach((item) => {
@@ -145,4 +150,34 @@ $('#open-modal-add').on('click', () => {
   mKPI.val('')
 })
 
+function getPagination() {
+  fetch(API)
+    .then((res) => res.json())
+    .then((data) => {
+      pageCount = Math.ceil(data.length / 5)
+      $('.pagination-page').remove()
+      for (let i = pageCount; i >= 1; i--) {
+        $('#previous').after(`
+          <button class="pagination-page">${i}</button>
+        `)
+      }
+    })
+}
+
+$('#next').on('click', () => {
+  if (page >= pageCount) return
+  page++
+  render()
+})
+$('#previous').on('click', () => {
+  if (page <= 1) return
+  page--
+  render()
+})
+$('body').on('click', '.pagination-page', (e) => {
+  page = e.target.innerText
+  render()
+})
+
 render()
+getPagination()
