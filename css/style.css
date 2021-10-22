@@ -49,8 +49,9 @@
 
 .btn_add-wrapper {
   position: fixed;
-  right: 15%;
-  bottom: 50px;
+  right: 10%;
+  bottom: 1%;
+  z-index: 10;
 }
 
 .btn-edit {
@@ -85,9 +86,10 @@
 .modal-add.active {
   display: flex;
   flex-flow: column;
-  gap: 10%;
+  gap: 5%;
   justify-content: center;
   align-items: center;
+  z-index: 1000;
 }
 .modal-edit input,
 .modal-add input {
@@ -172,4 +174,18 @@ h2 {
   width: 20px;
   height: 20px;
   margin: 5px;
+}
+
+#background {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+#background.active {
+  display: block;
 }

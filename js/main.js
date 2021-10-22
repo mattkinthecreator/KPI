@@ -25,7 +25,8 @@ $('#btn_add').on('click', function () {
     monthlyKpi: mKPI.val(),
   }
   addInfo(obj)
-  // modal.toggleClass('active')
+  modal.toggleClass('active')
+  $('#background').toggleClass('active')
 })
 
 function addInfo(obj) {
@@ -57,6 +58,7 @@ $('body').on('click', '.btn-edit', (e) => {
   let id = e.target.parentNode.id
   editModal.attr('id', id)
   editModal.toggleClass('active')
+  $('#background').toggleClass('active')
   fetch(`${API}/${id}`)
     .then((res) => res.json())
     .then((data) => {
@@ -72,6 +74,7 @@ $('#btn-save').on('click', (e) => {
   let id = e.target.parentNode.id
   editStudent(id)
   editModal.toggleClass('active')
+  $('#background').toggleClass('active')
 })
 
 function editStudent(id) {
@@ -117,6 +120,12 @@ async function render() {
   // getPagination()
 }
 
+$('#background').on('click', () => {
+  $('#background').removeClass('active')
+  modal.removeClass('active')
+  editModal.removeClass('active')
+})
+
 search.on('input', async function () {
   let res = await fetch(`${API}?q=${search.val()}`)
   console.log(search.val())
@@ -145,6 +154,7 @@ search.on('input', async function () {
 
 $('#open-modal-add').on('click', () => {
   modal.toggleClass('active')
+  $('#background').toggleClass('active')
   userName.val('')
   lastName.val('')
   number.val('')
