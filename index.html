@@ -19,6 +19,7 @@
       </div>
     </div>
     <div class="container">
+      <h1>Students KPI</h1>
       <div class="contacts__header">
         <p>Name</p>
         <p>Last name</p>
@@ -29,18 +30,20 @@
       <div class="contacts"></div>
     </div>
 
-    <div class="bnt_add-wrapper">
+    <div class="btn_add-wrapper">
       <img id="open-modal-add" src="./img/plus.png" />
     </div>
     <div class="modal-add">
+      <h2>Add student</h2>
       <input type="text" id="name" placeholder="Name"/>
       <input type="text" id="lastName" placeholder="Last Name"/>
       <input type="text" id="phoneNumber" placeholder="Phone number"/>
       <input type="text" id="weeklyKPI" placeholder="Weekly KPI"/>
       <input type="text" id="monthlyKPI" placeholder="Monthly KPI"/>
-      <button id="btn_add">Add student</button>
+      <button id="btn_add">Save</button>
     </div>
     <div class="modal-edit">
+      <h2>Edit student</h2>
       <input type="text" id="name_edit" placeholder="Name"/>
       <input type="text" id="lastName_edit" placeholder="Last Name"/>
       <input type="text" id="phoneNumber_edit" placeholder="Phone number"/>
@@ -49,8 +52,10 @@
       <button id="btn-save">Save</button>
     </div>
     <div id="background"></div>
-    <img id="previous" src="./img/previous.png" />
-    <img id="next" src="./img/skip.png" />
+    <div class="pagination-buttons">
+      <img id="previous" src="./img/previous.png" />
+      <img id="next" src="./img/skip.png" />
+    </div>
     <script src="./js/main.js"></script>
   </body>
 </html>
