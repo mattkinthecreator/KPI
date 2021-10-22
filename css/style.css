@@ -52,3 +52,26 @@
   justify-content: space-evenly;
   width: 100%;
 }
+
+.modal-edit, .modal-add {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 500px;
+  background: yellow;
+}
+.modal-edit input {
+  width: 60%;
+  
+}
+
+.modal-edit.active, .modal-add.active {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
