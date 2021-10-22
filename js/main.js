@@ -124,8 +124,8 @@ search.on('input', async function () {
   contacts.html('')
   data.forEach((item) => {
     contacts.append(
-      `<div id="${item.id}">
-        <div class="edit-wrapper">
+      `<div class="student">
+        <div class="edit-wrapper" id="${item.id}">
           <img class="btn-edit" src="./img/pen.png">
         </div>
         <div class="student-info">
@@ -135,7 +135,7 @@ search.on('input', async function () {
           <p>${item.weeklyKpi}</p>
           <p>${item.monthlyKpi}</p>
         </div>
-        <div class="delete-wrapper">
+        <div class="delete-wrapper" id="${item.id}">
           <img class="btn-delete" src="./img/delete.png">
         </div>
       </div>`

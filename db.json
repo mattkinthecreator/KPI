@@ -9,14 +9,6 @@
       "id": 1
     },
     {
-      "name": "Adilet",
-      "lastName": "Maadanov",
-      "phone": "123123",
-      "weeklyKpi": "100",
-      "monthlyKpi": "100",
-      "id": 2
-    },
-    {
       "name": "Ilim",
       "lastName": "123",
       "phone": "123",
@@ -111,6 +103,14 @@
       "weeklyKpi": "12312",
       "monthlyKpi": "123",
       "id": 14
+    },
+    {
+      "name": "Ilim",
+      "lastName": "123",
+      "phone": "123",
+      "weeklyKpi": "12312",
+      "monthlyKpi": "123",
+      "id": 15
     }
   ]
 }
