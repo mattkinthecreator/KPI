@@ -9,7 +9,12 @@
 
 .container {
   margin: 0 auto;
+  text-align: center;
   width: 1140px;
+}
+
+.search-bar {
+  text-align: center;
 }
 
 .header {
@@ -26,3 +31,30 @@
   background-color: rgb(123, 46, 46);
   color: #fff;
 }
+
+#open-modal-add{
+  width: 20px;
+  height: 20px;
+}
+
+.contacts {
+  /* display: flex; */
+  /* justify-content: space-evenly; */
+}
+
+.btn-edit{
+  width: 20px;
+  height: 20px;
+}
+
+.btn-delete {
+  width: 20px;
+  height: 20px;
+}
+
+.student {
+    display: flex; 
+  justify-content: space-evenly;
+  width: 100%;
+}
+

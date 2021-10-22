@@ -60,7 +60,7 @@ async function render() {
 
   data.forEach((item) => {
     contacts.append(
-      `<div id="${item.id}">
+      `<div id="${item.id}" class="student">
             <img class="btn-edit" src="./img/pen.png">
             <p>${item.name}</p>
             <p>${item.lastName}</p>
@@ -90,3 +90,5 @@ search.on('input' , async function(){
         </div>`)
     });
 })
+
+render()
